@@ -1,25 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Provider } from 'react-redux'
+import store from './components/redux/store'
+
+import {
+  AdaptivityProvider,
+  ConfigProvider,
+  AppRoot,
+  SplitLayout,
+  SplitCol,
+  View,
+  Panel,
+  PanelHeader,
+  Header,
+  Group,
+  SimpleCell,
+  useAdaptivityConditionalRender
+} from '@vkontakte/vkui';
+import '@vkontakte/vkui/dist/vkui.css';
+
+import ProductList from "./components/productList/productList"
+import PriceBar from "./components/priceBar/priceBar"
+
+import "./style/style.scss"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppRoot>
+      <Provider store={store}>
+        <SplitLayout 
+          style={{ justifyContent: 'center', columnGap: '30px'}}
+        > 
+          <SplitCol width="75%" maxWidth={750}>
+            <ProductList />
+          </SplitCol>
+          <SplitCol fixed width="25%" maxWidth={250}>
+            <Panel>
+              <PriceBar />
+            </Panel>
+          </SplitCol>
+        </SplitLayout>
+      </Provider>
+    </AppRoot>
   );
 }
 

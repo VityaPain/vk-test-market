@@ -1,0 +1,100 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li,
+dl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+
+    &-info {
+        width: 100%;
+        display: flex;
+        column-gap: 10px;
+
+        &__group {
+            margin-right: auto;
+        }
+
+        &__name {
+            min-height: 58px;
+            white-space: normal;
+        }
+
+        &__count {
+            display: flex;
+            padding: 0;
+            column-gap: 20px;
+        }
+
+        &__delete {
+            width: fit-content;
+            height: fit-content;
+            padding: 5px;
+            align-self: center;
+            min-height: fit-content;
+        }
+    }
+}
+
+.count-controller {
+    padding: 0;
+    display: flex;
+    align-items: center; 
+    column-gap: 10px;
+}
+
+.vkuiImageBase__img {
+    object-fit: contain;
+    mix-blend-mode: multiply; 
+}
+
+.vkuiSimpleCell__middle  {
+    padding: 0;
+}
+
+.vkuiTappable.vkuiTappable--sizeX-none.vkuiTappable--hasPointer-none.vkuiClickable__host.vkuiClickable__realClickable.vkui-focus-visible.vkuiSimpleCell.vkuiSimpleCell--sizeY-none {
+    padding: 0;
+}
